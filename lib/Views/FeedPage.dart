@@ -19,6 +19,7 @@ class _FeedPageState extends State<FeedPage> {
         width: 360.w,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +35,7 @@ class _FeedPageState extends State<FeedPage> {
                   ),
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                    EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                     color: Colors.black87,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +53,7 @@ class _FeedPageState extends State<FeedPage> {
                         Text(
                           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
                           style:
-                              TextStyle(color: Colors.white70, fontSize: 14.sp),
+                          TextStyle(color: Colors.white70, fontSize: 14.sp),
                         ),
                       ],
                     ),
