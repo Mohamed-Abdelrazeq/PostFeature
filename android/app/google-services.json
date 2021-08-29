@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "669176203",
+    "project_id": "ronak-912fd",
+    "storage_bucket": "ronak-912fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669176203:android:09640a634409a669b51f8e",
+        "android_client_info": {
+          "package_name": "com.example.ronaklesson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669176203-mqu8gst0nepsiscdgavmmoh4jpda47r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7MJKxMYyV2vJ3gdyAPRP8yxi5iEkushg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669176203-mqu8gst0nepsiscdgavmmoh4jpda47r6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
