@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ronaklesson/Views/FeedPage.dart';
+import 'package:ronaklesson/Views/HomePage.dart';
 import 'Views/AddPostPage.dart';
 import 'Views/RegisterationPage.dart';
 
@@ -18,9 +18,8 @@ class MyApp extends StatelessWidget {
       designSize: Size(360, 690),
       builder: () => MaterialApp(
         routes: {
-          "/FeedPage" : (context) => FeedPage(),
           "/AddPostPage" : (context) => AddPostPage(),
-
+          "/HomePage" : (context) => HomePage(),
         },
         home: RegistrationPage(),
       ),

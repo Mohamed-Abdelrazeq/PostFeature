@@ -19,7 +19,7 @@ class _FeedPageState extends State<FeedPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(child: Text("News Feed")),
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
       ),
       body: Container(
         width: 360.w,

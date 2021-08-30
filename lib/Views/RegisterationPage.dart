@@ -13,6 +13,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController _passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    _passwordController.dispose();
+    _emailController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
@@ -78,7 +85,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           password: _passwordController.text
                       );
                       if(userCredential != null){
-                        Navigator.pushReplacementNamed(context, "/FeedPage");
+                        Navigator.pushReplacementNamed(context, "/HomePage");
                       }else{
                         print("Failed");
                       }
