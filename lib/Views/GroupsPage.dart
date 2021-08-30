@@ -12,13 +12,6 @@ class _GroupsPageState extends State<GroupsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text("Groups")),backgroundColor: Colors.black,),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          //TODO : Add A New Group
-        },
-        backgroundColor: Colors.black,
-        child: Icon(Icons.add,color: Colors.white,),
-      ),
       body: Scaffold(
         backgroundColor: Colors.white,
         body: ListView.builder(
@@ -59,6 +52,13 @@ class _GroupsPageState extends State<GroupsPage> {
             );
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          // TODO : Add New Group
+        },
+        backgroundColor: Colors.black,
+        child: Icon(Icons.add,color: Colors.white,),
       ),
     );
   }
