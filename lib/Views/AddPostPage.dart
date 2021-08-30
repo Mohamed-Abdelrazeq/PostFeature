@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:ronaklesson/Models/PostModel.dart';
 import 'package:ronaklesson/Sevices/Storage.dart';
 
 class AddPostPage extends StatefulWidget {
@@ -97,7 +98,7 @@ class _AddPostPageState extends State<AddPostPage> {
           String timeNow = DateTime.now().toString();
           await Storage().uploadFile(filePath: _imagePath,time: timeNow);
           String imageURL = await Storage().downloadURLExample(filePath: _imagePath,time: timeNow);
-          print(imageURL);
+          await PostModel(title: _titleController.text,content: _contentController.text,imageURL: imageURL).addPost();
           Navigator.pop(context);
         },
         backgroundColor: Colors.black,
