@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ronaklesson/Sevices/Auth.dart';
 
-class LoginPage extends StatefulWidget {
+class RegistrationPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegistrationPageState createState() => _RegistrationPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Login",
+                "Register",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 64.sp,
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     },
                     child: Text(
-                      "Login",
+                      "Register",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,

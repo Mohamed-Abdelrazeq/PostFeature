@@ -21,7 +21,6 @@ class _AddPostPageState extends State<AddPostPage> {
   Future<void> _getImage() async {
     final ImagePicker _picker = ImagePicker();
     final PickedFile response = await _picker.getImage(source: ImageSource.gallery);
-    print(response.path);
     setState(() {
       _imagePath = response.path;
     });
@@ -95,9 +94,10 @@ class _AddPostPageState extends State<AddPostPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           //TODO
-          String timeNow = DateTime.now().toString();
-          await Storage().uploadFile(filePath: _imagePath,time: timeNow);
-          String imageURL = await Storage().downloadURLExample(filePath: _imagePath,time: timeNow);
+          String _timeNow = DateTime.now().toString();
+
+          await Storage().uploadFile(filePath: _imagePath,time: _timeNow);
+          String imageURL = await Storage().downloadURLExample(filePath: _imagePath,time: _timeNow);
           await PostModel(title: _titleController.text,content: _contentController.text,imageURL: imageURL).addPost();
           Navigator.pop(context);
         },

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ronaklesson/Views/FeedPage.dart';
 import 'Views/AddPostPage.dart';
-import 'Views/LoginPage.dart';
+import 'Views/RegisterationPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           "/AddPostPage" : (context) => AddPostPage(),
 
         },
-        home: LoginPage(),
+        home: RegistrationPage(),
       ),
     );
   }
