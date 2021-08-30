@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:ronaklesson/Sevices/Storage.dart';
 
 class AddPostPage extends StatefulWidget {
   @override
@@ -11,8 +12,11 @@ class AddPostPage extends StatefulWidget {
 
 class _AddPostPageState extends State<AddPostPage> {
 
+  //Variables
   String _imagePath;
-
+  TextEditingController _titleController = TextEditingController();
+  TextEditingController _contentController = TextEditingController();
+  //Functions
   Future<void> _getImage() async {
     final ImagePicker _picker = ImagePicker();
     final PickedFile response = await _picker.getImage(source: ImageSource.gallery);
@@ -56,13 +60,44 @@ class _AddPostPageState extends State<AddPostPage> {
                   fit: BoxFit.cover,
                   image: FileImage(File(_imagePath)),
                 ),
-              )
+              ),
+              SizedBox(height: 16.h,),
+              TextField(
+                controller: _titleController,
+                style: TextStyle(color: Colors.black87, fontSize: 18.sp),
+                decoration: InputDecoration(
+                  hintText: "enter your post title",
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black54)),
+                ),
+              ),
+              SizedBox(height: 16.h,),
+              TextField(
+                controller: _contentController,
+                maxLines: null,
+                minLines: 4,
+                style: TextStyle(color: Colors.black87, fontSize: 18.sp),
+                decoration: InputDecoration(
+                  hintText: "enter your post content",
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black54)),
+                ),
+              ),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () async {
+          //TODO
+          String timeNow = DateTime.now().toString();
+          await Storage().uploadFile(filePath: _imagePath,time: timeNow);
+          String imageURL = await Storage().downloadURLExample(filePath: _imagePath,time: timeNow);
+          print(imageURL);
           Navigator.pop(context);
         },
         backgroundColor: Colors.black,
