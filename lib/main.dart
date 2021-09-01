@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:ronaklesson/Controllers/LocationProvider.dart';
+import 'package:ronaklesson/Providers/LocationProvider.dart';
 import 'package:ronaklesson/Views/HomePage.dart';
 import 'Views/AddPostPage.dart';
 import 'Views/RegisterationPage.dart';

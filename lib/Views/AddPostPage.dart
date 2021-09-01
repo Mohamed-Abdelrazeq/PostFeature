@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ronaklesson/Models/PostModel.dart';
-import 'package:ronaklesson/Sevices/Storage.dart';
+import 'package:ronaklesson/Services/Storage.dart';
 
 class AddPostPage extends StatefulWidget {
   @override
