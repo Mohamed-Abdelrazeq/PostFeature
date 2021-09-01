@@ -1,37 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-class LocationController extends ChangeNotifier{
+class LocationProvider extends ChangeNotifier{
 
   double lat;
   double lng;
 
-  Future<void> getCurrentLocation() async {
+  Future<void> getLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
-
-    //Check if location service enabled in the phone
+    //Get Permissions
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    //Open location service if it is closed
-    if(!serviceEnabled){
+    if (!serviceEnabled) {
       await Geolocator.openLocationSettings();
     }
-    //Check location permission for our app
     permission = await Geolocator.checkPermission();
-    //Request permissions if we don't have it
-    if(permission == LocationPermission.denied){
+    if (permission == LocationPermission.deniedForever) {
       permission = await Geolocator.requestPermission();
     }
-    //Get User Location
-    if(permission == LocationPermission.whileInUse || permission == LocationPermission.always){
-      try{
-        Position coordinates = await Geolocator.getCurrentPosition();
-        lat = coordinates.latitude;
-        lng = coordinates.longitude;
-      } catch (e){
-        print(e);
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission != LocationPermission.whileInUse &&
+          permission != LocationPermission.always) {
+        return "SAD";
       }
     }
+    //Get Location
+    Position currentCoordinates = await Geolocator.getCurrentPosition();
+    lat = currentCoordinates.latitude.toDouble();
+    lng = currentCoordinates.longitude.toDouble();
+    notifyListeners();
   }
 
 }
