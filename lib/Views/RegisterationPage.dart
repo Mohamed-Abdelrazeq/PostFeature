@@ -11,6 +11,7 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  TextEditingController _phone = TextEditingController();
 
   @override
   void dispose() {
@@ -46,6 +47,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 style: TextStyle(color: Colors.black87, fontSize: 18.sp),
                 decoration: InputDecoration(
                   hintText: "enter your email",
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black54)),
+                ),
+
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              TextField(
+                controller: _phone,
+                autofocus: false,
+                style: TextStyle(color: Colors.black87, fontSize: 18.sp),
+                decoration: InputDecoration(
+                  hintText: "enter your phone",
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black)),
                   enabledBorder: UnderlineInputBorder(
